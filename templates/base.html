@@ -1,10 +1,91 @@
-<!DOCTYPE html>
+{% load static %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Craig_List</title>
+    <title>Craig's List</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="{% static "my_app/css/style.css" %}">
+    <link rel="stylesheet" href="{% static "my_app/css/materialize.min.css" %}">
+    <link rel="stylesheet" href="{% static "my_app/css/icon.css" %}">
 </head>
 <body>
-    <h2>Testing to see if this works</h2>
+    <nav id="header">
+        <div class="container nav-wrapper col">
+            <a href="/" class="brand-logo"><i class="material-icons">cloud</i> Craig's List</a>
+            <ul id="nav-mobile" class="right">
+                <li><a href="/">Home</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h1 style="text-align: center">What do you want to search for on Craig's List?</h1>
+        <div class="row">
+            <div class="col s4">
+                <div class="center">
+                    <i id="flash_on" class="large material-icons">flash_on</i>
+                    <p>Fast craigslist webcrawler</p>
+                    <p class="light center">Scrape away right here with a beautiful GUI.</p>
+                </div>
+            </div>
+            <div class="col s4">
+                <div class="center">
+                    <i id="camera" class="large material-icons">camera</i>
+                    <p>Filter your searches</p>
+                    <p class="light center">We built in functionality to filter based on priorities</p>
+                </div>
+            </div>
+            <div class="col s4">
+                <div class="center">
+                    <i id="chrome_reader_mode" class="large material-icons">chrome_reader_mode</i>
+                    <p>A much sexier front-end compared to Craigslist</p>
+                    <p class="light center">We built this with ❤ </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form action="{% url 'new_search' %}" method="post">
+        {% csrf_token %}
+        <div class="container">
+            <label>
+                <input class="search" type="text" name="search" placeholder="search">
+            </label>
+            <button class="btn waves-effect waves-light" type="submit" name="submit">Submit
+                <i class="material-icons right">send</i>
+            </button>
+        </div>
+    </form>
+    <div class="container">
+        {% block content %}
+
+        {% endblock content %}
+    </div>
+    <footer id='footer' class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#">Link 1</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#">Link 2</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#">Link 3</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#">Link 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#">More Links</a>
+            </div>
+          </div>
+        </footer>
+    <script src="{% static "my_app/js/materialize.min.js" %}"></script>
 </body>
 </html>

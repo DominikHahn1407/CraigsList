@@ -1,3 +1,7 @@
+body {
+    background-color: lightgray;
+}
+
 .card {
     height: 400px;
     overflow: hidden;
@@ -34,5 +38,29 @@
     color: white;
     font-weight: bold;
     font-size: 3em;
+    text-align: center;
+}
+
+#header, #footer {
+    background-color: #4db6ac;
+}
+
+#flash_on {
+    color: #424242;
+}
+
+#camera {
+    color: #8d6e63;
+}
+
+#chrome_reader_mode {
+    color: #90a4ae;
+}
+
+.search::placeholder {
+    color: #37474f;
+}
+
+.search_title {
     text-align: center;
 }
