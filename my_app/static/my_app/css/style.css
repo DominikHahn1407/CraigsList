@@ -2,16 +2,6 @@ body {
     background-color: lightgray;
 }
 
-.card {
-    height: 400px;
-    overflow: hidden;
-}
-
-.card-image {
-    height: 250px;
-    overflow: hidden;
-}
-
 .flex-container {
     padding: 0;
     margin: 0;
@@ -41,6 +31,10 @@ body {
     text-align: center;
 }
 
+#header {
+    margin-bottom: 100px;
+}
+
 #header, #footer {
     background-color: #4db6ac;
 }
@@ -57,10 +51,38 @@ body {
     color: #90a4ae;
 }
 
-.search::placeholder {
-    color: #37474f;
+.search::placeholder, .min_price::placeholder, .max_price::placeholder {
+    color: darkgray;
+    padding-left: 5%;
 }
 
 .search_title {
     text-align: center;
+}
+
+.card {
+    height: 400px;
+    overflow: hidden;
+}
+
+.card-image {
+    height: 250px;
+    overflow: hidden;
+}
+
+.container_heading {
+    text-align: center;
+}
+
+.placeholder_div {
+    height: 400px;
+}
+
+#search_form {
+    margin-top: 50px;
+}
+
+#submit_search {
+    margin-top: 10px;
+    margin-left: 10px;
 }
